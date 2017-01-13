@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html ng-app="myUsers">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+<title>All Users </title>
+<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+    <style>
+        html                    { overflow-y:scroll; }
+        body                    { padding-top:50px; }
+        #todo-list              { margin-bottom:30px; }
+    </style>
+
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script><!-- load jquery -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js"></script><!-- load angular -->
+    <script src="core.js"></script>
+</head>
+<body ng-controller="mainController">
+<div class="container">
+
+
+<div class="row">
+  
+  <div id="container" class="col-md-6 col-md-offset-3">
+<h3> All the user accounts and the status of each user:</h3>
+
+<ul class="list-group">
+  <li class="list-group-item"  ng-repeat="x in users">
+    <span class="badge">{{x.status}}</span>
+    {{x.email}}
+  </li>
+</ul>
+</div>
+</div>
+
+
+
+
+
+</div>
+	
+</body>
+</html>

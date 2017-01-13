@@ -11,7 +11,7 @@ var bodyParser   = require('body-parser');
 var session      = require('express-session');
 
 var configDB = require('./config/database.js');
-
+app.use(express.static(__dirname+"/views"));
 mongoose.connect(configDB.url);
 require('./config/passport')(passport); 
 app.use(morgan('dev')); // log every request to the console
@@ -21,7 +21,7 @@ app.use(bodyParser()); // get information from html forms
 app.set('view engine', 'ejs'); // set up ejs for templating
 
 
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'lajksfdjasljsfdlajfdlajf' })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session

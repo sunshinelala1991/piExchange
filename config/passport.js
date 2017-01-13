@@ -31,6 +31,16 @@ function(req,email,password,done){
 		if(!user.validPassword(password))
 			return done(null,false,req.flash('loginMessage','Wrong password'));
 
+
+		User.update({'local.email':email}, {
+			$set:{status:true}
+			
+        	
+		},  function(err, doc){
+	    if (err) return res.send(500, { error: err });
+	    
+	});
+
 		return done(null,user);
 	});
 }));
@@ -61,6 +71,7 @@ function(req,email,password,done){
 
 				newUser.local.email=email;
 				newUser.local.password=newUser.generateHash(password);
+				newUser.status=true;
 
 				newUser.save(function(err){
 					if(err) throw err;
