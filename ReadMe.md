@@ -6,17 +6,23 @@ https://nodejs.org/en/download/
 To install mongodb, go to:
 https://www.mongodb.com/download-center#community
 
-Then change the database.js file inside config directory to the mongodb 
-path in your local computer. The default address is always localhost:27017 and in my case, 'test' is the name of the database to be connected to, you may want to change the database name to your own.
+After this, type "npm install" inside the directory of this project,
+To install all the required libraries.
 
-	url:'mongodb://localhost:27017/test'
+Then change the database.js file inside config directory to the mongodb 
+path in your local computer. The default address is always "localhost:27017" and in my case, 'test' is the name of the database to be connected to, you may want to change the database name to your own.
+
+	url:'mongodb://localhost:27017/the_name_of_your_own_database'
 
 
 Then in command line, type:
 
-node server.js 
+"node server.js"
 
+(There may be some error messages but it actually does not affect the application)
 
-and go to "http://localhost:8080/" and you can see the page
+Go to "http://localhost:8080/".
 
+The languages, frameworks and libraries used are:
 
+NodeJS, ExpressJS, MongoDB, AngularJS, Highcharts, Bootstrap, HTML,CSS,Javascript
